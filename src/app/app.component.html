@@ -1,0 +1,61 @@
+<h1>Class Directive</h1>
+<h3 [ngClass]="{isActive: status}"></h3>
+
+<hr>
+
+<h1>Styling Directive</h1>
+<h4 [ngStyle]="{color: check ? 'green' : 'red'}">COLOR</h4>
+
+<hr>
+
+<h1>Loop Directive</h1>
+<ul>
+  <li *ngFor="let post of posts; let i = index">{{ post.title }} | index = {{ i }} </li>
+</ul>
+
+<hr>
+
+<h1>Structural Directives</h1>
+<h3 *ngIf="status; else notActive">status radio button is active</h3>
+<ng-template #notActive>
+  <p>Not Active</p>
+</ng-template>
+<input [(ngModel)]="check" type="checkbox" id="check" [checked]="check">
+<h3 *ngIf="check; else notChecked">Checked</h3>
+<ng-template #notChecked>
+  <p>Not Checked</p>
+</ng-template>
+
+<hr>
+
+<h1>Two-Way Binding</h1>
+Favorite Car: <input [(ngModel)]="car" type="text">
+&nbsp;{{ car }}
+
+<hr>
+
+<h1>Property Binding</h1>
+<label for="status">Status</label>
+<input type="radio" id="status" [checked]="status">
+
+<hr>
+
+<h1>Event Binding</h1>
+<button (click)="greetPerson()">CLICK ME!</button>
+<div (mouseover)="mousingOver()" class="box"></div>
+<input (keydown)="keyDowning()" type="text">
+
+<hr>
+
+<h1>String Interpolation</h1>
+<h3>
+  Welcome to {{ title }} {{ firstName }} {{ lastName }}!
+</h3>
+{{ displayName() }}
+<br>
+{{ city ? city : 'No City' }}
+
+<hr>
+
+<h1>Adding components</h1>
+<app-felipe></app-felipe>
